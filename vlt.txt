@@ -1,0 +1,74 @@
+# AEM Demo Project
+
+This a content package project generated using the AEM Multimodule Lazybones template.
+
+## Github Location
+
+https://github.com/ogill/demo-project
+
+…or create a new repository on the command line
+
+
+echo "# demo-project" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/ogill/demo-project.git
+git push -u origin master
+…or push an existing repository from the command line
+
+
+git remote add origin https://github.com/ogill/demo-project.git
+git push -u origin master
+
+
+## Building
+
+This project uses Maven for building. Common commands:
+
+From the root directory, run ``mvn -PautoInstallPackage clean install`` to build the bundle and content package and install to a CQ instance.
+
+From the bundle directory, run ``mvn -PautoInstallBundle clean install`` to build *just* the bundle and install to a CQ instance.
+
+## Using with AEM Developer Tools for Eclipse
+
+To use this project with the AEM Developer Tools for Eclipse, import the generated Maven projects via the Import:Maven:Existing Maven Projects wizard. Then enable the Content Package facet on the _content_ project by right-clicking on the project, then select Configure, then Convert to Content Package... In the resulting dialog, select _src/main/content_ as the Content Sync Root.
+
+## Using with VLT
+
+To use vlt with this project, first build and install the package to your local CQ instance as described above. Then cd to `content/src/main/content/jcr_root` and run
+
+    vlt --credentials admin:admin checkout -f ../META-INF/vault/filter.xml --force http://localhost:4502/crx
+
+Once the working copy is created, you can use the normal ``vlt up`` and ``vlt ci`` commands.
+
+## Specifying CRX Host/Port
+
+The CRX host and port can be specified on the command line with:
+mvn -Dcrx.host=otherhost -Dcrx.port=5502 <goals>
+
+## CQ Instance
+/work/cq/aem/6.1/demo-project-author
+
+#Setup VLT
+# https://github.com/Adobe-Marketing-Cloud/homebrew-brews
+brew tap adobe-marketing-cloud/brews
+brew install adobe-marketing-cloud/brews/filevault
+
+
+cd /work/code/example/demo-project/content/src/main/content/jcr_root
+vlt --credentials admin:admin checkout -f ../META-INF/vault/filter.xml --force http://localhost:4502/crx
+ 
+checkout (co) Checkout a Vault file system analyze Analyze packages 
+commit (ci) Send changes from your working copy to the repository.
+update (up) Bring changes from the repository into the working copy.
+To test the synchronization:
+
+Navigate to .../jcr_content/libs/foundation/components/text.
+Edit something in text.jsp.
+See the modified files by typing vlt st
+See the changes by typing vlt diff text.jsp
+Commit the changes: vlt ci test.jsp.
+Reload a page containing a text component and see whether your changes are there.
+
+
