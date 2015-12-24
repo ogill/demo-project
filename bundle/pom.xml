@@ -122,12 +122,10 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+                       <Export-Package>com.myproject.models,com.myproject.components</Export-Package>
+                    	<Require-Bundle>org.apache.sling.models.api</Require-Bundle>
                         <Bundle-SymbolicName>com.demo.demo-project</Bundle-SymbolicName>
-
-                        <Sling-Model-Packages>
-                          ''
-                        </Sling-Model-Packages>
-
+                        <Sling-Model-Packages>com.slingmodels.core,com.myproject.models</Sling-Model-Packages>
                     </instructions>
                 </configuration>
             </plugin>

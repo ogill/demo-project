@@ -1,0 +1,25 @@
+<html>
+    <head>
+    	<div data-sly-include="/libs/wcm/core/components/init/init.jsp"></div>
+    </head>
+	<body>
+		<h1>Sample page for creating Sightly Demo code - Examples 4</h1>        
+
+        <p>1. Sighlty Use example using a pojo and sending parameters</p>
+        <div data-sly-use.mycomp="${ 'com.myproject.components.MyComponent' @ param1='valuexxx', param2=currentPage}">
+            ${mycomp.calculatedValue}
+        </div>
+        
+        <p>2. Sighlty Use example using a Sling Model class</p>
+        <div data-sly-use.myslingmodel="${ 'com.myproject.models.SlingModelExample' @ param1='value1', param2='value2'}">
+            ${myslingmodel.calculatedValue}
+        </div>
+                
+        <p>3. Sighlty Use example using a Sling Model class</p>
+        <div data-sly-use.mySSM="${ 'com.myproject.models.SimpleSlingModel' @ email='bob', firstName='John' }">
+           <p> ${mySSM.email}</p>
+           <p> ${mySSM.firstName}</p>
+        </div>                
+        
+	</body>
+</html>
