@@ -94,3 +94,11 @@ Summary of actions:
 Now, start committing on your feature. When done, use:
 
      git flow feature finish sightly-web
+ 
+Created pages and Templates in CRXDE Lite
+
+
+Install Brackets extension: https://docs.adobe.com/content/docs/en/dev-tools/aem-brackets.html
+     
+     
+   
