@@ -1,0 +1,52 @@
+<html>
+    <head>
+    	<div data-sly-include="/libs/wcm/core/components/init/init.jsp"></div>
+    </head>
+	<body>
+		<h1>Sample page for creating Sightly Demo code - Examples 2</h1>        
+
+        <p>Sample 1 Arcticle and Sections tags</p>
+        <article data-sly-list="${currentPage.listChildren}">
+            <section>
+                <h1>${item.title}</h1>
+                <h2>${item.properties.subtitle}</h2>
+                <h3 data-sly-test="${item.listChildren}">This page has subpages</h3>
+            </section>
+        </article>
+        
+        <p>Sample 2 : Preserve mock data</p>
+        <ul data-sly-list="${currentPage.listChildren}">
+          <li data-sly-text="${item.title}">This is the first menu item</li>
+          <li data-sly-test><a href="#">This is the second menu item</a></li>
+          <li data-sly-test><a href="#">This is the third menu item</a></li>
+          <li data-sly-test><a href="#">This is the fourth menu item</a></li>
+        </ul>
+        
+        
+        <p>Sample 3: name your expression and reuse that in other data-sly-test expression.</p>
+        <div data-sly-test.valid="${pageProperties.title}">${pageProperties.title}</div>
+        <div data-sly-test="${!valid && wcmmode.edit}">Please enter a title for this page</div>
+        
+        
+        <p>Sample 4 If some cases you have a need to hide a container element, for example hiding the ul for a list, or not generating a surrounding  div
+
+For these cases you can use the data-sly-unwrap attribute.
+
+In this example we generate a list of li items, without the ul </p>
+
+        <ul data-sly-list.child="${currentPage.listChildren}" data-sly-unwrap>
+          <li>${child.title}</li>
+        </ul>
+
+        <p>Sample 5 </p>
+        <ul data-sly-list.child="${currentPage.listChildren}" data-sly-unwrap="${wcmmode.edit}">
+          <li>${child.title}</li>
+        </ul>
+        
+        <p>Sample 6: Custom Java-classes</p>
+        <div data-sly-use.comp1="com.myproject.components.SightlyComponent">
+          <h1>${comp1.myTitle}</h1>
+        </div>
+        
+	</body>
+</html>
