@@ -1,3 +1,4 @@
 bundle/target/
 content/target/
 .vlt
+content/src/main/content/jcr_root/.brackets.json

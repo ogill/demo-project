@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:description="A simple page template that will let you add components to it."
+    jcr:description="Demo Project A simple page template that will let you add components to it."
     jcr:primaryType="cq:Template"
-    jcr:title="Simple Page Template"
+    jcr:title="Demo Project - Simple Page Template"
     allowedPaths="[/content(/.*)?]"
     ranking="{Long}100">
     <jcr:content

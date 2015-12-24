@@ -72,3 +72,25 @@ Commit the changes: vlt ci test.jsp.
 Reload a page containing a text component and see whether your changes are there.
 
 
+## Uppdated .gitignore to remove /target folders and .vlt fils
+## Need to run the commands below
+git rm . -r --cached
+git add .
+git commit -m "fixed untracked files"
+
+## Useful git pages
+http://danielkummer.github.io/git-flow-cheatsheet/
+https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository
+http://stackoverflow.com/questions/11451535/gitignore-not-working
+
+## Creating gitflow bracnhes
+demo-project $ git flow feature start sightly-web
+Switched to a new branch 'feature/sightly-web'
+
+Summary of actions:
+- A new branch 'feature/sightly-web' was created, based on 'develop'
+- You are now on branch 'feature/sightly-web'
+
+Now, start committing on your feature. When done, use:
+
+     git flow feature finish sightly-web

@@ -3,8 +3,58 @@
     	<div data-sly-include="/libs/wcm/core/components/init/init.jsp"></div>
     </head>
 	<body>
-		<h1>Sample page for creating Sightly Demo code</h1>
-    	<p>You can add components below</p>
-		<div data-sly-resource="${ @path='par', resourceType='foundation/components/parsys'}"></div>
+		<h1>Sample page for creating Sightly Demo code</h1>        
+        Brackets changes!
+        
+
+        <p data-sly-test="${properties.jcr:title}">
+            Sample1
+             <b>jcr:title</b> Page title is ${properties.jcr:title}
+        </p>
+        
+        <div>currentPageName : ${currentPage.name}</div>
+        
+        <p>Sample 2 Edit mode</p>
+        <div data-sly-test="${wcmmode.edit}">
+            <p>Show this only in edit mode to the author</p>
+            <p>You can add components below</p>
+        </div>
+        
+        <p>Sample 3 Edit mode: naming and reuse of tests</p>
+        <div data-sly-test.author="${wcmmode.edit || wcmmode.design}">
+           <p>Show this to the author</p>
+        </div>
+        <div data-sly-test="${!author}">
+           <p>Not in author mode anymore. This will only appear in published page</p>
+        </div>
+    	
+        <p>Sample 4 Replace text, added mock text so code can be view in HTML Editors</p>
+        <div data-sly-text="${currentPage.title}">Mock page title</div>
+        
+		<div data-sly-resource="${ @path='par', resourceType='foundation/components/parsys'}">   
+        </div>
+        
+        <p>Sample5 List child pages</p>
+
+        <ul data-sly-list.child="${currentPage.listChildren}">
+            <li>${child.title}</li>
+        </ul>
+        
+        <p>Sample 6, List child pages,  </p>
+        <ul data-sly-list.child="${currentPage.listChildren}">
+             <li class="${ childList.even ? 'odd' : 'even'}">${child.title}</li>
+        </ul>
+        
+        <p>Sample7 Create parsys, with different name from parsys above</p>
+
+        <div data-sly-resource="${ @path='par7', resourceType='foundation/components/parsys'}">
+        </div>
+        
+        <p>Sample 8, So you are in need to dis­able the wcm­mode for a spe­cific com­po­nent? That can now be done via the wcmmode-option when includ­ing a component.</p>
+        
+        <p>Sample 9, define fallbacks </p>
+
+        <div>${pageProperties.jcr:title || properties.title || "No title"}</div>
+        
 	</body>
 </html>
