@@ -5,5 +5,16 @@
 	<body>
 		<h1>Sample page for creating Sightly Demo code - Examples 3</h1>        
 
+        <p>Return an array from the Java Pojo Class</p>
+        <div data-sly-use.aemComponent="com.myproject.components.SightlyComponent">
+         ${ aemComponent.names }
+        </div>
+        
+        
+        <p>Return the name sent to the POJO</p>
+        <div data-sly-use.aemComponent="${'com.myproject.components.SightlyComponent' @ firstName= 'Opkar', lastName = 'Gill'}">
+         ${aemComponent.fullname}
+        </div>
+        
 	</body>
 </html>
