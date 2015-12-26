@@ -9,5 +9,8 @@
 
 
     <filter root="/etc/designs/aem-demo-project"/>
+    
+    
+    <filter root="/content/custom-sightly-site"/>
 
 </workspaceFilter>
