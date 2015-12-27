@@ -116,7 +116,7 @@
                 <executions>
                     <execution>
                         <goals>
-                            <goal>jslint</goal>
+                            <!--  >goal>jslint</goal-->
                         </goals>
                     </execution>
                 </executions>
