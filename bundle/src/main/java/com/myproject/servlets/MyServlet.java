@@ -33,6 +33,7 @@ public class MyServlet extends SlingSafeMethodsServlet {
     @Override
     protected void doGet(final SlingHttpServletRequest request, final SlingHttpServletResponse response)
             throws ServletException, IOException {
+    	/*
     	// Writing HTML in servlets is usually inadvisable, and is better suited to be provided via a JSP/Sightly template
         // This is just an example.
         response.getWriter().write("<html><head></head><body>Hello "
@@ -40,6 +41,22 @@ public class MyServlet extends SlingSafeMethodsServlet {
                         + "!</body></html>");
         // By Default the 200 HTTP Response status code is used; below explicitly sets it.                    
         response.setStatus(SlingHttpServletResponse.SC_OK);
+        */
+        // When constructing a JSON response, leverage the Sling JSON Apis
+        JSONObject jsonResponse = new JSONObject();
+        try {
+            jsonResponse.put("success", true);
+            jsonResponse.put("new-world", "my new value");
+            // Write the JSON to the response
+            response.getWriter().write(jsonResponse.toString(2));
+            // Be default, a 200 HTTP Response Status code is used
+        } catch (JSONException e) {
+            //log.error("Could not formulate JSON response");
+            // Servlet failures should always return an approriate HTTP Status code
+            response.setStatus(SlingHttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            // If you do not set your own HTML Response content, the OOTB HATEOS Response is used
+            response.getWriter().write("ERROR");
+        }
     }
 	
     protected final void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws
