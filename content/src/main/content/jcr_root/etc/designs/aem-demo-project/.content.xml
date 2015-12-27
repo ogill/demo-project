@@ -21,4 +21,5 @@
                 js="aem-demo-project.main"/>
         </clientlibs>
     </jcr:content>
+    <clientlibs/>
 </jcr:root>

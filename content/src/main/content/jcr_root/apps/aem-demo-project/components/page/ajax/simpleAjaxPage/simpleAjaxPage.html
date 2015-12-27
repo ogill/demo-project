@@ -1,0 +1,14 @@
+<html>
+    <head>
+    	<div data-sly-include="/libs/wcm/core/components/init/init.jsp"></div>
+            <meta http-equiv="content-type" content="text/html; charset=UTF-8"
+          data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
+        <meta data-sly-call="${clientLib.js @ categories='demo.ajax'}" data-sly-unwrap></meta>
+    </head>
+	<body>
+		<h2>This page will use Ajax to call a servlet</h2>	
+    </body>
+    <td>
+	    <input type="button" value="Submit"  name="submit" id="submit" value="Submit">
+	</td>
+</html>
