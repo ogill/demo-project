@@ -12,11 +12,14 @@ $(document).ready(function() {
                 try {
                     serverResponse = $.parseJSON(rawData);
 
-                    alert(serverResponse); 
+                    //alert(serverResponse); 
                     alert("rawData is "+rawData);
+                    alert(serverResponse.success);
+                    alert(serverResponse.value);
 
 
                 } catch(err) {
+                    alert("Error in JS " + err);
                     failure(err);
                 }
             },

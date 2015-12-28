@@ -115,9 +115,9 @@
                 <artifactId>jslint-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <goals>
-                            <!--  >goal>jslint</goal-->
-                        </goals>
+						 <goals>
+                            <!-->goal>jslint</goal-->
+                        </goals>                  
                     </execution>
                 </executions>
                 <configuration>

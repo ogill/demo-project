@@ -46,7 +46,7 @@ public class MyServlet extends SlingSafeMethodsServlet {
         JSONObject jsonResponse = new JSONObject();
         try {
             jsonResponse.put("success", true);
-            jsonResponse.put("new-world", "my new value");
+            jsonResponse.put("value", "my new value");
             // Write the JSON to the response
             response.getWriter().write(jsonResponse.toString(2));
             // Be default, a 200 HTTP Response Status code is used

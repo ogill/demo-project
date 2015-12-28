@@ -1,0 +1,33 @@
+<div data-sly-test="${wcmmode.edit}">
+    Edit Mode: Rich Text Component
+</div>
+
+<div data-sly-test="${properties.title.trim || properties.content.trim}">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td bgcolor="#ffffff">
+			<table border="0" cellpadding="0" cellspacing="0" width="660" class="wrapper" align="center">
+				<tbody><tr>
+					<td style="padding: 15px 20px 0px 20px; font-size: 12px; line-height: 18px; font-family: Arial, sans-serif;">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tbody><tr data-sly-test="${properties.title!=null && !properties.title.trim.empty}">
+								<td style="padding: 0px 0px 20px 0px; font-size: 20px; font-family: Arial, sans-serif; color: #ff5a00; line-height: 24px;">
+        							<span style="font-weight: bold;">${properties.title}</span><br>
+									<span>${properties.subTitle}</span>
+								</td>
+							</tr>
+        					<tr data-sly-test="${properties.content!=null && !properties.content.trim.empty}">
+								<td style="padding: 0px 0px 15px 0px; font-size: 16px; line-height: 24px; font-family: Arial, sans-serif; color: #000000;">
+									<span class="appleBody">
+										${properties.content @ context = 'html'}
+									</span>
+								</td>
+							</tr>
+						</tbody></table>
+					</td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+</tbody></table>
+</div>

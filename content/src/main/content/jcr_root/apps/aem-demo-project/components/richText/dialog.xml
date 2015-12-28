@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Rich Text"
+    xtype="panel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <title
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Title"
+            name="./title"
+            xtype="textfield"/>
+        <subTitle
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Sub Title"
+            name="./subTitle"
+            xtype="textfield"/>
+        <content
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Content"
+            name="./content"
+            xtype="richtext">
+            <rtePlugins jcr:primaryType="nt:unstructured">
+                <misctools
+                    jcr:primaryType="nt:unstructured"
+                    features="*"/>
+            </rtePlugins>
+            <htmlRules jcr:primaryType="nt:unstructured">
+                <docType jcr:primaryType="nt:unstructured">
+                    <typeConfig
+                        jcr:primaryType="nt:unstructured"
+                        useSemanticMarkup="{Boolean}true"/>
+                </docType>
+            </htmlRules>
+        </content>
+    </items>
+</jcr:root>

@@ -3,6 +3,8 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:doctype="html_5"
+        cq:lastModified="{Date}2015-12-28T16:27:31.615Z"
+        cq:lastModifiedBy="admin"
         cq:template="/libs/wcm/core/templates/designpage"
         jcr:primaryType="cq:PageContent"
         jcr:title="AEM Demo Project"
@@ -20,6 +22,15 @@
                 jcr:primaryType="nt:unstructured"
                 js="aem-demo-project.main"/>
         </clientlibs>
+        <simplePageSightly jcr:primaryType="nt:unstructured">
+            <par
+                jcr:lastModified="{Date}2015-12-28T16:27:31.612Z"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                components="[group:General,group:Demo]">
+                <section jcr:primaryType="nt:unstructured"/>
+            </par>
+        </simplePageSightly>
     </jcr:content>
     <clientlibs/>
 </jcr:root>
